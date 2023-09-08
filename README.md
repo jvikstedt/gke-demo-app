@@ -59,3 +59,16 @@ docker build --tag username/gke-demo-app:0.1 .
 ```
 docker push username/gke-demo-app:0.1
 ```
+
+### Helm
+
+Deploying application with helm
+
+```
+cd helm
+
+helm install gke-demo-app .
+
+// cleanup
+// helm uninstall gke-demo-app
+```

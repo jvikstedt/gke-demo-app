@@ -72,3 +72,13 @@ helm install gke-demo-app .
 // cleanup
 // helm uninstall gke-demo-app
 ```
+
+### Accessing services
+
+You can access services using port-forwarding
+
+```
+kubectl --namespace default port-forward backend-75466f9d85-kjxr5 3000:3000
+
+curl localhost:3000
+```

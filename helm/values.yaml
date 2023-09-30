@@ -10,5 +10,7 @@ backend:
     pullPolicy: IfNotPresent
     tag: "0.1"
   service:
-    type: ClusterIP
+    name: backend-service
+    type: NodePort
     port: 3000
+    targetPort: 3000

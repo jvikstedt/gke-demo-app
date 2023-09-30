@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gke-demo-app-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Values.backend.service.name }}
+            port:
+              number: {{ .Values.backend.service.targetPort }}

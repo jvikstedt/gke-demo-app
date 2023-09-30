@@ -6,7 +6,7 @@ backend:
   name: backend
   group: api
   image:
-    repository: docker.io/jvikstedt/gke-demo-app
+    repository: docker.io/jvikstedt/gke-demo-backend
     pullPolicy: IfNotPresent
     tag: "0.1"
   service:
@@ -14,3 +14,16 @@ backend:
     type: NodePort
     port: 3000
     targetPort: 3000
+
+frontend:
+  name: frontend
+  group: api
+  image:
+    repository: docker.io/jvikstedt/gke-demo-frontend
+    pullPolicy: IfNotPresent
+    tag: "0.1"
+  service:
+    name: frontend-service
+    type: NodePort
+    port: 80
+    targetPort: 80

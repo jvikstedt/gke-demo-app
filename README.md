@@ -43,21 +43,42 @@ Guide to setup GKE with terraform
 
 Building the app and pushing to image repository
 
+#### Backend
+
 1. Login to docker hub
 ```
 docker login -u username
 ```
 
-1. Build image
+2. Build image
 
 ```
-docker build --tag username/gke-demo-app:0.1 .
+docker build --tag username/gke-demo-backend:0.1 .
 ```
 
-2. Push image
+3. Push image
 
 ```
-docker push username/gke-demo-app:0.1
+docker push username/gke-demo-backend:0.1
+```
+
+#### Frontend
+
+1. Login to docker hub
+```
+docker login -u username
+```
+
+2. Build image
+
+```
+docker build -f Dockerfile.frontend --tag username/gke-demo-frontend:0.1 .
+```
+
+3. Push image
+
+```
+docker push username/gke-demo-frontend:0.1
 ```
 
 ### Helm

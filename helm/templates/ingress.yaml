@@ -13,3 +13,10 @@ spec:
             name: {{ .Values.backend.service.name }}
             port:
               number: {{ .Values.backend.service.targetPort }}
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Values.frontend.service.name }}
+            port:
+              number: {{ .Values.frontend.service.targetPort }}
